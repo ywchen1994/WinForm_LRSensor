@@ -1,7 +1,7 @@
 #pragma once
 #define _USE_MATH_DEFINES
 #include <Windows.h>
-#include"math.h"
+
 #include <fstream>
 #include<vector>
 #include"Pt.h"
@@ -32,6 +32,7 @@ namespace WinForm_LRSensor {
 	fstream ConnectRecord;
 	VideoCapture cap;
 	DeviceEnumerator de;
+
 	vector<Pt>Pt_oldClusterRefPoint;
 	std::map<int, Device> devices = de.getVideoDevicesMap();
 	uint format = 25;
@@ -84,7 +85,6 @@ namespace WinForm_LRSensor {
 				delete components;
 			}
 		}
-
 		/// <summary>
 		/// 設計工具所需的變數。
 		/// </summary>
@@ -100,9 +100,7 @@ namespace WinForm_LRSensor {
 	private: System::Windows::Forms::TabPage^  tabPage8;
 	private: System::IO::Ports::SerialPort^  serialPort_LiDAR;
 	private: System::ComponentModel::IContainer^  components;
-	private:
 	private: System::Windows::Forms::Timer^  timer1;
-
 	private: System::IO::Ports::SerialPort^  serialPort_Radar;
 	private: System::IO::Ports::SerialPort^  serialPort_Tbox;
 	private: System::Windows::Forms::Label^  tx_TBox_LAngle;
@@ -137,8 +135,6 @@ namespace WinForm_LRSensor {
 	private: System::Windows::Forms::Label^  Tx_Radar_Mode;
 	private: System::Windows::Forms::ComboBox^  cBox_TBox;
 	private: System::Windows::Forms::Button^  Btn_TboxCnt;
-
-
 	private: System::Windows::Forms::DataGridView^  Table_BSD;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column5;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column6;
@@ -152,7 +148,6 @@ namespace WinForm_LRSensor {
 	private: System::Windows::Forms::PictureBox^  pictureBox2;
 	private: System::Windows::Forms::Timer^  timer2;
 	private: System::Windows::Forms::Label^  Tx_CarSpeed2;
-
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::Button^  Btn_UpDateFileName;
 	private: System::Windows::Forms::Button^  Btn_LoadFilePath;
@@ -162,18 +157,16 @@ namespace WinForm_LRSensor {
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::Button^  Btn_SpeedUp;
 	private: System::Windows::Forms::Button^  Btn_SlowDown;
-
 	private: System::Windows::Forms::CheckBox^  cBox_ScanPt;
 	private: System::Windows::Forms::Label^  Tx_TBox_mode;
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::Label^  tx_TBox_RDataP3;
 	private: System::Windows::Forms::Label^  tx_TBox_LDataP3;
 	private: System::Windows::Forms::CheckBox^  cBox_ShowLiText;
-private: System::Windows::Forms::Label^  Tx_BarPos;
+	private: System::Windows::Forms::Label^  Tx_BarPos;
 
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn4;
 #pragma endregion
-
 #pragma region Windows Form Designer generated code
 			 /// <summary>
 			 /// 此為設計工具支援所需的方法 - 請勿使用程式碼編輯器修改
@@ -1011,6 +1004,7 @@ private: System::Windows::Forms::Label^  Tx_BarPos;
 					 static_cast<System::Byte>(0)));
 				 series7->LabelForeColor = System::Drawing::Color::YellowGreen;
 				 series7->Legend = L"Legend1";
+				 series7->MarkerSize = 3;
 				 series7->Name = L"Series_LiDAR";
 				 series8->ChartArea = L"ChartArea1";
 				 series8->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Point;
@@ -1025,6 +1019,7 @@ private: System::Windows::Forms::Label^  Tx_BarPos;
 				 series9->ChartArea = L"ChartArea1";
 				 series9->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::FastPoint;
 				 series9->Legend = L"Legend1";
+				 series9->MarkerColor = System::Drawing::Color::Red;
 				 series9->MarkerSize = 15;
 				 series9->Name = L"Series_TBox_Radar";
 				 series10->ChartArea = L"ChartArea1";
@@ -1265,8 +1260,10 @@ private: System::Windows::Forms::Label^  Tx_BarPos;
 			fp_Lidar << t1 << " " << TBox.currentSpeed << endl;
 			fp_Lidar.close();
 			vector<int >lab;
-			int nObj = EuclidCluster(LIDAR_cooridate, PartitionValue);
-			vector<vector<Pt>> Pt_ClusterList_new = Cluster2List(LIDAR_cooridate, nObj);
+
+			//int nObj = EuclidCluster(LIDAR_cooridate, PartitionValue);
+			//vector<vector<Pt>> Pt_ClusterList_new = Cluster2List(LIDAR_cooridate, nObj);
+			vector<vector<Pt>> Pt_ClusterList_new = Cluster2List_ContinuousAngle(LIDAR_cooridate);
 			Pt_newClusterRefPt.resize(Pt_ClusterList_new.size());
 			int index = 0;
 			for (uint16_t i = 0; i < Pt_ClusterList_new.size(); i++)
@@ -1640,15 +1637,6 @@ private: System::Windows::Forms::Label^  Tx_BarPos;
 
 		PartitionValue = Convert::ToDouble(tBox_Partition->Text) * 100;
 	}
-
-
-	private:Pt CoordinateRotation(double degree, Pt P)
-	{
-		Pt Ans;
-		Ans.x = cos(degree*M_PI / 180)*P.x + sin(degree*M_PI / 180)*P.y;
-		Ans.y = -sin(degree*M_PI / 180)*P.x + cos(degree*M_PI / 180)*P.y;
-		return Ans;
-	}
 	private:Pt R_Radar2LiDAR(Pt P)
 	{
 		Pt Ans;
@@ -1683,6 +1671,7 @@ private: System::Windows::Forms::Label^  Tx_BarPos;
 		{
 
 			timer2->Enabled = false;
+			timer2->Stop();
 			Btn_PlayPause->Image = gcnew Bitmap("..\\icon\\arrows.png");
 			f_PlayPause = true;
 			return;
@@ -1701,7 +1690,23 @@ private: System::Windows::Forms::Label^  Tx_BarPos;
 		}
 
 	}
-			 int ReadframeIndex = 0;
+
+	private:double get_Angle(Pt P1, Pt P2)
+	{
+		return Math::Atan2(P1.y - P2.y, P1.x - P2.x) * 180 / M_PI;
+	}
+	private:double WipeOutThreshold = 10000, t3 = 0;
+	private:bool is_Wipeout(Pt refPt, vector<Pt>&clustPt)
+	{
+		double sum = 0;
+		for (uint i = 0; i < clustPt.size(); i++)
+			sum += get_Distance(refPt, clustPt[i]);
+		if (sum > WipeOutThreshold)
+			return true;
+		else
+			return false;
+	}
+	private:int ReadframeIndex = 0;
 	private: System::Void timer2_Tick(System::Object^  sender, System::EventArgs^  e) {
 		if (cap.isOpened())
 		{
@@ -1713,8 +1718,7 @@ private: System::Windows::Forms::Label^  Tx_BarPos;
 			if (!frame.empty()) {
 				ShowImage(pictureBox2, frame);
 			}
-
-			//cout << currentPos << endl;
+			cout << currentPos << endl;
 		}
 		vector<Pt>Pt_newClusterRefPt;
 		char line[10000];
@@ -1722,6 +1726,7 @@ private: System::Windows::Forms::Label^  Tx_BarPos;
 		{
 			chart2->Series["Series_LiDAR"]->Points->Clear();
 			chart2->Series[1]->Points->Clear();
+#pragma region 讀取光達點
 			System::String^ str = gcnew System::String(line);
 			cli::array<System::String^> ^StringArray = str->Split(' ');
 			vector<Pt>LIDAR_cooridate;
@@ -1731,14 +1736,32 @@ private: System::Windows::Forms::Label^  Tx_BarPos;
 				{
 					LIDAR_X_cooridate[i] = System::Convert::ToDouble(StringArray[i]) * cos((0.5 * i) * (M_PI / 180));
 					LIDAR_Y_cooridate[i] = System::Convert::ToDouble(StringArray[i]) * sin((0.5 * i) * (M_PI / 180));
-					if (System::Convert::ToDouble(StringArray[i]) < 6000 && abs(LIDAR_X_cooridate[i]) < 2500)
+					if (System::Convert::ToDouble(StringArray[i]) < 4000 && abs(LIDAR_X_cooridate[i]) < 1000 && TBox.L_RADAR_Mode != 2)
 						LIDAR_cooridate.push_back(Pt(LIDAR_X_cooridate[i], LIDAR_Y_cooridate[i], System::Convert::ToDouble(StringArray[i]), 0.5 * i));
+					else if (System::Convert::ToDouble(StringArray[i]) < 4000 && abs(LIDAR_X_cooridate[i]) < 2000 && TBox.L_RADAR_Mode == 2)
+						LIDAR_cooridate.push_back(Pt(LIDAR_X_cooridate[i], LIDAR_Y_cooridate[i], System::Convert::ToDouble(StringArray[i]), 0.5 * i));
+
 				}
 				CurrentSpeed = System::Convert::ToDouble(StringArray[362]);
-				vector<int >lab;
-				//int nObj = EuclidCluster(LIDAR_cooridate, 200);
-				int nObj = DBSCAN(LIDAR_cooridate, 100, 2);
+				if (Pt_oldClusterRefPoint.size() == 0) {
+					Pt_oldClusterRefPoint = Pt_newClusterRefPt;
+					t3 = System::Convert::ToDouble(StringArray[361]);
+				}
+				float t4 = System::Convert::ToDouble(StringArray[361]);
+#pragma endregion
+
+
+				int nObj = EuclidCluster(LIDAR_cooridate, 200);
+				//int nObj = DBSCAN(LIDAR_cooridate, 100, 2);
 				vector<vector<Pt>> Pt_ClusterList_new = Cluster2List(LIDAR_cooridate, nObj);
+				//vector<vector<Pt>> Pt_ClusterList_new = Cluster2List_ContinuousAngle(LIDAR_cooridate);
+				for (uint i = 0; i < Pt_ClusterList_new.size(); i++)
+				{
+					double W, H, angle;
+					Pt P;
+					//void FindRectangle(vector<Pt> clusterPt, double &W, double &H, double &angle)
+					FindRectangle(Pt_ClusterList_new[i], W, H, angle, P);
+				}
 				Pt_newClusterRefPt.resize(Pt_ClusterList_new.size());
 				int index = 0;
 				for (uint16_t i = 0; i < Pt_ClusterList_new.size(); i++)
@@ -1768,27 +1791,26 @@ private: System::Windows::Forms::Label^  Tx_BarPos;
 							chart2->Series["Series_LiDAR"]->Points->AddXY(Pt_ClusterList_new[i][j].x, Pt_ClusterList_new[i][j].y);
 							chart2->Series["Series_LiDAR"]->Points[index]->Color = color;
 						}
+
 						index++;
 					}
-					Pt_newClusterRefPt[i] = min;
-					Pt_newClusterRefPt[i].range = get_Distance(min, Pt(0, 0));
-
+					if (Pt_ClusterList_new[i].size()>2)
+					{
+						Pt_newClusterRefPt[i] = Pt_ClusterList_new[i][1];
+					}
+				
+					//Pt_newClusterRefPt[i].range = get_Distance(min, Pt(0, 0));
 				}
-				if (Pt_oldClusterRefPoint.size() == 0) {
-					Pt_oldClusterRefPoint = Pt_newClusterRefPt;
-					t1 = System::Convert::ToDouble(StringArray[361]);
-				}
-
-				time_t t2 = System::Convert::ToDouble(StringArray[361]);
-				float time = (float)(t2 - t1) / CLK_TCK;
-				t1 = t2;
+				
+				float time = (float)(t4 - t3) / CLK_TCK;
+				t3 = t4;
 
 				FindClosePoint(Pt_newClusterRefPt, Pt_oldClusterRefPoint, time, CurrentSpeed);
 				for (uint i = 0; i < Pt_newClusterRefPt.size(); i++)
 				{
 					chart2->Series[1]->Points->AddXY(Pt_newClusterRefPt[i].x, Pt_newClusterRefPt[i].y);
 					if (abs(Pt_newClusterRefPt[i].velcity - CurrentSpeed) > 1 && cBox_ShowLiText->Checked)
-						chart2->Series[1]->Points[i]->Label = "(" + Math::Round(Pt_newClusterRefPt[i].x, 2).ToString() + " , " + Math::Round(Pt_newClusterRefPt[i].y, 2).ToString() + " , " + Math::Round(Pt_newClusterRefPt[i].velcity, 2).ToString() + ")";
+						chart2->Series[1]->Points[i]->Label = "(" + Math::Round(Pt_newClusterRefPt[i].x).ToString() + " , " + Math::Round(Pt_newClusterRefPt[i].y, 2).ToString() + " , " + Math::Round(Pt_newClusterRefPt[i].velcity, 2).ToString() + ")";
 				}
 				Tx_CarSpeed2->Text = CurrentSpeed.ToString();
 				Pt_oldClusterRefPoint = Pt_newClusterRefPt;
@@ -1877,6 +1899,7 @@ private: System::Windows::Forms::Label^  Tx_BarPos;
 			Tx_BarPos->Text = ReadframeIndex.ToString();
 			ReadframeIndex++;
 		}
+
 	}
 	private: System::Void Btn_UpDateFileName_Click(System::Object^  sender, System::EventArgs^  e) {
 
@@ -1896,13 +1919,16 @@ private: System::Windows::Forms::Label^  Tx_BarPos;
 		{
 			LoadFilePath = (char*)(void*)Marshal::StringToHGlobalAnsi(openFileDialog1->SelectedPath);
 			tBox_LoadPath->Text = openFileDialog1->SelectedPath;
-
+			if (fp_LiDarReader.is_open())fp_LiDarReader.close();
 			fp_LiDarReader.open(LoadFilePath + "\\Lidar.txt", ios::in);
+			if (cap.isOpened())cap.release();
 			cap.open(LoadFilePath + "\\VideoTest.avi");
+			if (fp_TBoxReader.is_open())fp_TBoxReader.close();
 			fp_TBoxReader.open(LoadFilePath + "\\TBox.txt", ios::in);
 			Tx_MaxFrame->Text = cap.get(CV_CAP_PROP_FRAME_COUNT).ToString();
-			trackBar1->Maximum = cap.get(CV_CAP_PROP_FRAME_COUNT)+1;
+			trackBar1->Maximum = cap.get(CV_CAP_PROP_FRAME_COUNT) + 1;
 			Btn_PlayPause->Enabled = true;
+			ReadframeIndex = 0;
 		}
 
 	}
@@ -1916,23 +1942,24 @@ private: System::Windows::Forms::Label^  Tx_BarPos;
 		fp_LiDarReader.open(LoadFilePath + "\\Lidar.txt", ios::in);
 		cap.open(LoadFilePath + "\\VideoTest.avi");
 		fp_TBoxReader.open(LoadFilePath + "\\TBox.txt", ios::in);
-		char line[10000] = {0};
+		char line[10000] = { 0 };
 		for (uint i = 0; i < ReadframeIndex; i++)
 		{
 			fp_TBoxReader.getline(line, sizeof(line));
 			fp_LiDarReader.getline(line, sizeof(line));
 		}
 		cap.set(CV_CAP_PROP_POS_FRAMES, ReadframeIndex);
+		Pt_oldClusterRefPoint.resize(0);
 		timer2->Start();
-		
+
 	}
 	private: System::Void Btn_SpeedUp_Click(System::Object^  sender, System::EventArgs^  e) {
 		timerInterval -= 3;
 		timer2->Interval = timerInterval;
 	}
 	private: System::Void Btn_SlowDown_Click(System::Object^  sender, System::EventArgs^  e) {
-		
-		timerInterval +=3;
+
+		timerInterval += 3;
 		timer2->Interval = timerInterval;
 	}
 

@@ -1,7 +1,9 @@
 #pragma once
+#define _USE_MATH_DEFINES
 #include<vector>
 #include<math.h>
-#include<vector>
+#include<valarray>
+#include"math.h"
 #include "opencv2/video/tracking.hpp"
 #include "opencv2/highgui/highgui.hpp"
 using namespace std;
@@ -34,9 +36,11 @@ int DBSCAN(std::vector<Pt>& _vec, double Eps, int MinPts);
 void CorePointCluster(Pt &P, vector<Pt>&RawData, uint16_t clusterId);
 inline double get_Distance(Pt P1, Pt P2);
 vector<vector<Pt>>Cluster2List(vector<Pt>&XYcord, int NoObj);
+vector<vector<Pt>>Cluster2List_ContinuousAngle(vector<Pt>&XYcord);
+Pt CoordinateRotation(double degree, Pt P);
 static void FindClosePoint(vector<Pt>&NewPoints, vector<Pt>&oldPoints, double timeInterval, double Speed)
 {
-	double Ylim = 90.0f*(1000.0f / 36.0f)*timeInterval;
+	double Ylim = 150.0f*(1000.0f / 36.0f)*timeInterval;
 	/*double Xlim = 200 * timeInterval;*/
 	//Speed = Speed*timeInterval
 	uint Nlength = NewPoints.size();
@@ -49,7 +53,7 @@ static void FindClosePoint(vector<Pt>&NewPoints, vector<Pt>&oldPoints, double ti
 		uint minPointIndex = 0;
 		for (uint16_t j = 0; j < Olength; j++)
 		{
-			distant = get_Distance(NewPoints[i],oldPoints[j]);
+			distant = get_Distance(NewPoints[i], oldPoints[j]);
 			if ((distant < minDistant))
 			{
 				minPointIndex = j;
@@ -59,7 +63,7 @@ static void FindClosePoint(vector<Pt>&NewPoints, vector<Pt>&oldPoints, double ti
 		if (minDistant <= Ylim)
 		{
 
-			NewPoints[i].velcity = get_Distance(NewPoints[i], oldPoints[minPointIndex]) / timeInterval;
+			NewPoints[i].velcity =(get_Distance(NewPoints[i], oldPoints[minPointIndex]) / timeInterval);
 			if (NewPoints[i].range < oldPoints[minPointIndex].range)
 				NewPoints[i].velcity = -NewPoints[i].velcity;
 		}
@@ -71,3 +75,4 @@ static void FindClosePoint(vector<Pt>&NewPoints, vector<Pt>&oldPoints, double ti
 	}
 
 }
+void FindRectangle(vector<Pt> clusterPt, double &W, double &H, double &angle,Pt &refPt);
