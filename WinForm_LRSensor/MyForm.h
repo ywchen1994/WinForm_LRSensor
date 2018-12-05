@@ -165,6 +165,7 @@ namespace WinForm_LRSensor {
 	private: System::Windows::Forms::CheckBox^  cBox_ShowLiText;
 	private: System::Windows::Forms::Label^  Tx_BarPos;
 
+
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  dataGridViewTextBoxColumn4;
 #pragma endregion
 #pragma region Windows Form Designer generated code
@@ -175,21 +176,21 @@ namespace WinForm_LRSensor {
 			 void InitializeComponent(void)
 			 {
 				 this->components = (gcnew System::ComponentModel::Container());
-				 System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-				 System::Windows::Forms::DataVisualization::Charting::Legend^  legend1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-				 System::Windows::Forms::DataVisualization::Charting::Series^  series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-				 System::Windows::Forms::DataVisualization::Charting::Series^  series2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-				 System::Windows::Forms::DataVisualization::Charting::Series^  series3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-				 System::Windows::Forms::DataVisualization::Charting::Series^  series4 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-				 System::Windows::Forms::DataVisualization::Charting::Series^  series5 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-				 System::Windows::Forms::DataVisualization::Charting::Series^  series6 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+				 System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea4 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+				 System::Windows::Forms::DataVisualization::Charting::Legend^  legend4 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+				 System::Windows::Forms::DataVisualization::Charting::Series^  series15 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+				 System::Windows::Forms::DataVisualization::Charting::Series^  series16 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+				 System::Windows::Forms::DataVisualization::Charting::Series^  series17 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+				 System::Windows::Forms::DataVisualization::Charting::Series^  series18 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+				 System::Windows::Forms::DataVisualization::Charting::Series^  series19 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+				 System::Windows::Forms::DataVisualization::Charting::Series^  series20 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 				 System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
-				 System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea2 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-				 System::Windows::Forms::DataVisualization::Charting::Legend^  legend2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-				 System::Windows::Forms::DataVisualization::Charting::Series^  series7 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-				 System::Windows::Forms::DataVisualization::Charting::Series^  series8 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-				 System::Windows::Forms::DataVisualization::Charting::Series^  series9 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-				 System::Windows::Forms::DataVisualization::Charting::Series^  series10 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+				 System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea3 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+				 System::Windows::Forms::DataVisualization::Charting::Legend^  legend3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+				 System::Windows::Forms::DataVisualization::Charting::Series^  series11 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+				 System::Windows::Forms::DataVisualization::Charting::Series^  series12 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+				 System::Windows::Forms::DataVisualization::Charting::Series^  series13 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+				 System::Windows::Forms::DataVisualization::Charting::Series^  series14 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 				 this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 				 this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 				 this->Btn_UpDateFileName = (gcnew System::Windows::Forms::Button());
@@ -333,68 +334,68 @@ namespace WinForm_LRSensor {
 				 // 
 				 // chart1
 				 // 
-				 chartArea1->AxisX->Interval = 100;
-				 chartArea1->AxisX->IsReversed = true;
-				 chartArea1->AxisX->Maximum = 1000;
-				 chartArea1->AxisX->Minimum = -1000;
-				 chartArea1->AxisY->Interval = 100;
-				 chartArea1->AxisY->IsReversed = true;
-				 chartArea1->AxisY->Maximum = 4000;
-				 chartArea1->AxisY->Minimum = 0;
-				 chartArea1->Name = L"ChartArea1";
-				 this->chart1->ChartAreas->Add(chartArea1);
-				 legend1->Name = L"Legend1";
-				 this->chart1->Legends->Add(legend1);
+				 chartArea4->AxisX->Interval = 100;
+				 chartArea4->AxisX->IsReversed = true;
+				 chartArea4->AxisX->Maximum = 1000;
+				 chartArea4->AxisX->Minimum = -1000;
+				 chartArea4->AxisY->Interval = 100;
+				 chartArea4->AxisY->IsReversed = true;
+				 chartArea4->AxisY->Maximum = 4000;
+				 chartArea4->AxisY->Minimum = 0;
+				 chartArea4->Name = L"ChartArea1";
+				 this->chart1->ChartAreas->Add(chartArea4);
+				 legend4->Name = L"Legend1";
+				 this->chart1->Legends->Add(legend4);
 				 this->chart1->Location = System::Drawing::Point(-42, -32);
 				 this->chart1->Name = L"chart1";
-				 series1->ChartArea = L"ChartArea1";
-				 series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Point;
-				 series1->Color = System::Drawing::Color::Khaki;
-				 series1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				 series15->ChartArea = L"ChartArea1";
+				 series15->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Point;
+				 series15->Color = System::Drawing::Color::Khaki;
+				 series15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
-				 series1->LabelForeColor = System::Drawing::Color::YellowGreen;
-				 series1->Legend = L"Legend1";
-				 series1->Name = L"Series_LiDAR";
-				 series2->ChartArea = L"ChartArea1";
-				 series2->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Point;
-				 series2->Color = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				 series15->LabelForeColor = System::Drawing::Color::YellowGreen;
+				 series15->Legend = L"Legend1";
+				 series15->Name = L"Series_LiDAR";
+				 series16->ChartArea = L"ChartArea1";
+				 series16->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Point;
+				 series16->Color = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
 					 static_cast<System::Int32>(static_cast<System::Byte>(192)));
-				 series2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				 series16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
-				 series2->Legend = L"Legend1";
-				 series2->MarkerColor = System::Drawing::Color::Blue;
-				 series2->MarkerSize = 10;
-				 series2->Name = L"Series_LiDAR_CLOSE";
-				 series3->ChartArea = L"ChartArea1";
-				 series3->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::FastPoint;
-				 series3->Color = System::Drawing::Color::ForestGreen;
-				 series3->Legend = L"Legend1";
-				 series3->MarkerSize = 10;
-				 series3->Name = L"Series_Radar_Angle";
-				 series4->ChartArea = L"ChartArea1";
-				 series4->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Point;
-				 series4->Legend = L"Legend1";
-				 series4->MarkerColor = System::Drawing::Color::DarkMagenta;
-				 series4->MarkerSize = 15;
-				 series4->MarkerStyle = System::Windows::Forms::DataVisualization::Charting::MarkerStyle::Star4;
-				 series4->Name = L"Series_TBox_LRadar";
-				 series5->ChartArea = L"ChartArea1";
-				 series5->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Point;
-				 series5->Color = System::Drawing::Color::Black;
-				 series5->Legend = L"Legend1";
-				 series5->MarkerSize = 10;
-				 series5->Name = L"Series_TBox_RRadar";
-				 series6->ChartArea = L"ChartArea1";
-				 series6->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Point;
-				 series6->Legend = L"Legend1";
-				 series6->MarkerSize = 10;
-				 series6->Name = L"Series_RadarDetectArea";
-				 this->chart1->Series->Add(series1);
-				 this->chart1->Series->Add(series2);
-				 this->chart1->Series->Add(series3);
-				 this->chart1->Series->Add(series4);
-				 this->chart1->Series->Add(series5);
-				 this->chart1->Series->Add(series6);
+				 series16->Legend = L"Legend1";
+				 series16->MarkerColor = System::Drawing::Color::Blue;
+				 series16->MarkerSize = 10;
+				 series16->Name = L"Series_LiDAR_CLOSE";
+				 series17->ChartArea = L"ChartArea1";
+				 series17->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::FastPoint;
+				 series17->Color = System::Drawing::Color::ForestGreen;
+				 series17->Legend = L"Legend1";
+				 series17->MarkerSize = 10;
+				 series17->Name = L"Series_Radar_Angle";
+				 series18->ChartArea = L"ChartArea1";
+				 series18->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Point;
+				 series18->Legend = L"Legend1";
+				 series18->MarkerColor = System::Drawing::Color::DarkMagenta;
+				 series18->MarkerSize = 15;
+				 series18->MarkerStyle = System::Windows::Forms::DataVisualization::Charting::MarkerStyle::Star4;
+				 series18->Name = L"Series_TBox_LRadar";
+				 series19->ChartArea = L"ChartArea1";
+				 series19->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Point;
+				 series19->Color = System::Drawing::Color::Black;
+				 series19->Legend = L"Legend1";
+				 series19->MarkerSize = 10;
+				 series19->Name = L"Series_TBox_RRadar";
+				 series20->ChartArea = L"ChartArea1";
+				 series20->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Point;
+				 series20->Legend = L"Legend1";
+				 series20->MarkerSize = 10;
+				 series20->Name = L"Series_RadarDetectArea";
+				 this->chart1->Series->Add(series15);
+				 this->chart1->Series->Add(series16);
+				 this->chart1->Series->Add(series17);
+				 this->chart1->Series->Add(series18);
+				 this->chart1->Series->Add(series19);
+				 this->chart1->Series->Add(series20);
 				 this->chart1->Size = System::Drawing::Size(1439, 1000);
 				 this->chart1->TabIndex = 10;
 				 this->chart1->Text = L"¹Ï";
@@ -983,54 +984,54 @@ namespace WinForm_LRSensor {
 				 // 
 				 // chart2
 				 // 
-				 chartArea2->AxisX->Interval = 100;
-				 chartArea2->AxisX->IsReversed = true;
-				 chartArea2->AxisX->Maximum = 1000;
-				 chartArea2->AxisX->Minimum = -1000;
-				 chartArea2->AxisY->Interval = 100;
-				 chartArea2->AxisY->IsReversed = true;
-				 chartArea2->AxisY->Maximum = 4000;
-				 chartArea2->AxisY->Minimum = 0;
-				 chartArea2->Name = L"ChartArea1";
-				 this->chart2->ChartAreas->Add(chartArea2);
-				 legend2->Name = L"Legend1";
-				 this->chart2->Legends->Add(legend2);
+				 chartArea3->AxisX->Interval = 100;
+				 chartArea3->AxisX->IsReversed = true;
+				 chartArea3->AxisX->Maximum = 1000;
+				 chartArea3->AxisX->Minimum = -1000;
+				 chartArea3->AxisY->Interval = 100;
+				 chartArea3->AxisY->IsReversed = true;
+				 chartArea3->AxisY->Maximum = 4000;
+				 chartArea3->AxisY->Minimum = 0;
+				 chartArea3->Name = L"ChartArea1";
+				 this->chart2->ChartAreas->Add(chartArea3);
+				 legend3->Name = L"Legend1";
+				 this->chart2->Legends->Add(legend3);
 				 this->chart2->Location = System::Drawing::Point(-42, -32);
 				 this->chart2->Name = L"chart2";
-				 series7->ChartArea = L"ChartArea1";
-				 series7->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Point;
-				 series7->Color = System::Drawing::Color::Khaki;
-				 series7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				 series11->ChartArea = L"ChartArea1";
+				 series11->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Point;
+				 series11->Color = System::Drawing::Color::Khaki;
+				 series11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
-				 series7->LabelForeColor = System::Drawing::Color::YellowGreen;
-				 series7->Legend = L"Legend1";
-				 series7->MarkerSize = 3;
-				 series7->Name = L"Series_LiDAR";
-				 series8->ChartArea = L"ChartArea1";
-				 series8->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Point;
-				 series8->Color = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				 series11->LabelForeColor = System::Drawing::Color::YellowGreen;
+				 series11->Legend = L"Legend1";
+				 series11->MarkerSize = 3;
+				 series11->Name = L"Series_LiDAR";
+				 series12->ChartArea = L"ChartArea1";
+				 series12->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Point;
+				 series12->Color = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
 					 static_cast<System::Int32>(static_cast<System::Byte>(192)));
-				 series8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				 series12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 					 static_cast<System::Byte>(0)));
-				 series8->Legend = L"Legend1";
-				 series8->MarkerColor = System::Drawing::Color::Blue;
-				 series8->MarkerSize = 10;
-				 series8->Name = L"Series_LiDAR_CLOSE";
-				 series9->ChartArea = L"ChartArea1";
-				 series9->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::FastPoint;
-				 series9->Legend = L"Legend1";
-				 series9->MarkerColor = System::Drawing::Color::Red;
-				 series9->MarkerSize = 15;
-				 series9->Name = L"Series_TBox_Radar";
-				 series10->ChartArea = L"ChartArea1";
-				 series10->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Point;
-				 series10->Legend = L"Legend1";
-				 series10->MarkerSize = 10;
-				 series10->Name = L"Series_RadarDetectArea";
-				 this->chart2->Series->Add(series7);
-				 this->chart2->Series->Add(series8);
-				 this->chart2->Series->Add(series9);
-				 this->chart2->Series->Add(series10);
+				 series12->Legend = L"Legend1";
+				 series12->MarkerColor = System::Drawing::Color::Blue;
+				 series12->MarkerSize = 10;
+				 series12->Name = L"Series_LiDAR_CLOSE";
+				 series13->ChartArea = L"ChartArea1";
+				 series13->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::FastPoint;
+				 series13->Legend = L"Legend1";
+				 series13->MarkerColor = System::Drawing::Color::Red;
+				 series13->MarkerSize = 15;
+				 series13->Name = L"Series_TBox_Radar";
+				 series14->ChartArea = L"ChartArea1";
+				 series14->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Point;
+				 series14->Legend = L"Legend1";
+				 series14->MarkerSize = 10;
+				 series14->Name = L"Series_RadarDetectArea";
+				 this->chart2->Series->Add(series11);
+				 this->chart2->Series->Add(series12);
+				 this->chart2->Series->Add(series13);
+				 this->chart2->Series->Add(series14);
 				 this->chart2->Size = System::Drawing::Size(1389, 977);
 				 this->chart2->TabIndex = 11;
 				 this->chart2->Text = L"¹Ï";
@@ -1762,7 +1763,7 @@ namespace WinForm_LRSensor {
 					//void FindRectangle(vector<Pt> clusterPt, double &W, double &H, double &angle)
 					FindRectangle(Pt_ClusterList_new[i], W, H, angle, P);
 				}
-				Pt_newClusterRefPt.resize(Pt_ClusterList_new.size());
+				//Pt_newClusterRefPt.resize(Pt_ClusterList_new.size());
 				int index = 0;
 				for (uint16_t i = 0; i < Pt_ClusterList_new.size(); i++)
 				{
@@ -1796,7 +1797,7 @@ namespace WinForm_LRSensor {
 					}
 					if (Pt_ClusterList_new[i].size()>2)
 					{
-						Pt_newClusterRefPt[i] = Pt_ClusterList_new[i][1];
+						Pt_newClusterRefPt.push_back(Pt_ClusterList_new[i][1]);
 					}
 				
 					//Pt_newClusterRefPt[i].range = get_Distance(min, Pt(0, 0));
