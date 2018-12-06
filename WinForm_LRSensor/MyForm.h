@@ -1555,23 +1555,24 @@ namespace WinForm_LRSensor {
 
 	private:bool _is_InRange(Pt P)
 	{
+		
 		switch (TBox.L_RADAR_Mode)
 		{
 		case 0x01:
-			if (abs(P.x) < 380 && P.y < 1200)//BSD
+			if (abs(P.x) < 500 && P.y < 1200)//BSD
 				return true;
 			else
 				return false;
 
 			break;
 		case 0x02:
-			if (abs(P.x) < 200 && P.y < 100)//RCTA
+			if (abs(P.x) < 2200 && P.y < 1000)//RCTA
 				return true;
 			else
 				return false;
 			break;
 		case 0x03:
-			if (abs(P.x) < 380 && P.y < 2000)//DOW
+			if (abs(P.x) < 500 && P.y < 2000)//DOW
 				return true;
 			else
 				return false;
@@ -1787,7 +1788,7 @@ namespace WinForm_LRSensor {
 								min.y = Pt_ClusterList_new[i][j].y;
 							}
 						}
-						if (cBox_ScanPt)
+						if (cBox_ScanPt->Checked)
 						{
 							chart2->Series["Series_LiDAR"]->Points->AddXY(Pt_ClusterList_new[i][j].x, Pt_ClusterList_new[i][j].y);
 							chart2->Series["Series_LiDAR"]->Points[index]->Color = color;
@@ -1795,14 +1796,15 @@ namespace WinForm_LRSensor {
 
 						index++;
 					}
-					if (Pt_ClusterList_new[i].size()>2)
+					if (Pt_ClusterList_new[i].size() > 3)
 					{
-						Pt_newClusterRefPt.push_back(Pt_ClusterList_new[i][1]);
+						if (get_Distance(Pt_ClusterList_new[i][2], Pt_ClusterList_new[i][Pt_ClusterList_new[i].size() - 1]) < 600)
+							Pt_newClusterRefPt.push_back(Pt_ClusterList_new[i][2]);
 					}
-				
+
 					//Pt_newClusterRefPt[i].range = get_Distance(min, Pt(0, 0));
 				}
-				
+
 				float time = (float)(t4 - t3) / CLK_TCK;
 				t3 = t4;
 
@@ -1811,7 +1813,8 @@ namespace WinForm_LRSensor {
 				{
 					chart2->Series[1]->Points->AddXY(Pt_newClusterRefPt[i].x, Pt_newClusterRefPt[i].y);
 					if (abs(Pt_newClusterRefPt[i].velcity - CurrentSpeed) > 1 && cBox_ShowLiText->Checked)
-						chart2->Series[1]->Points[i]->Label = "(" + Math::Round(Pt_newClusterRefPt[i].x).ToString() + " , " + Math::Round(Pt_newClusterRefPt[i].y, 2).ToString() + " , " + Math::Round(Pt_newClusterRefPt[i].velcity, 2).ToString() + ")";
+					  if(_is_InRange(Pt_newClusterRefPt[i]))
+						chart2->Series[1]->Points[i]->Label = "(" + Math::Round(Pt_newClusterRefPt[i].x).ToString() + " , " + Math::Round(Pt_newClusterRefPt[i].y).ToString() + " , " + Math::Round(Pt_newClusterRefPt[i].velcity).ToString() + ")";
 				}
 				Tx_CarSpeed2->Text = CurrentSpeed.ToString();
 				Pt_oldClusterRefPoint = Pt_newClusterRefPt;

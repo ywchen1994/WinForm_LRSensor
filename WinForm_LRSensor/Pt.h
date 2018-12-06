@@ -21,7 +21,7 @@ public:
 	double range;
 	double theta;
 	double velcity;
-
+	bool is_inRadarRange;
 	bool is_visited;
 	int clusterId;
 	bool isCore;

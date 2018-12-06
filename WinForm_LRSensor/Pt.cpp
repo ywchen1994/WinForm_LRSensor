@@ -8,7 +8,7 @@ Pt::Pt()
 	theta = 0;
 	velcity = 0;
 	is_KF_init = false;
-
+	is_inRadarRange = false;
 	// rng.fill(KF.statePost,cv::RNG::UNIFORM, 0, false);
 
 }
@@ -22,6 +22,7 @@ Pt::Pt(double _x, double _y)
 	isCore = false;
 	clusterId = -1;
 	is_KF_init = false;
+	is_inRadarRange = false;
 }
 
 Pt::Pt(double _x, double _y, double _range, double _theta)
@@ -135,7 +136,7 @@ bool predicate(Pt P1, Pt P2, double eps)
 }
 bool predicate(Pt P1, Pt P2)
 {
-	return   (abs(P1.y - P2.y) < 300 && abs(P1.x - P2.x) < 150);
+	return   (abs(P1.y - P2.y)<200) && (abs(P1.x - P2.x) < 100);
 }
 int EuclidCluster(vector<Pt>& _vec, double eps)
 {
