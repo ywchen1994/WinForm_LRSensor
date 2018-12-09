@@ -136,7 +136,7 @@ bool predicate(Pt P1, Pt P2, double eps)
 }
 bool predicate(Pt P1, Pt P2)
 {
-	return   (abs(P1.y - P2.y)<200) && (abs(P1.x - P2.x) < 100);
+	return   (abs(P1.y - P2.y)<200) && (abs(P1.x - P2.x) < 100) && (abs(P1.theta - P2.theta) < 2);
 }
 int EuclidCluster(vector<Pt>& _vec, double eps)
 {
