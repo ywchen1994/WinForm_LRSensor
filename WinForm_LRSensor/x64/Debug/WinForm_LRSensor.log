@@ -1,29 +1,37 @@
-﻿  MyForm.cpp
+﻿  DeviceEnumerator.cpp
+  MyForm.cpp
 c:\users\ywchen1994\desktop\winform_lrsensor\winform_lrsensor\Pt.h(46): warning C4267: '正在初始化': 將 'size_t' 轉換為 'uint'，資料可能遺失
 c:\users\ywchen1994\desktop\winform_lrsensor\winform_lrsensor\Pt.h(47): warning C4267: '正在初始化': 將 'size_t' 轉換為 'uint'，資料可能遺失
-c:\users\ywchen1994\desktop\winform_lrsensor\winform_lrsensor\MyForm.h(1272): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
+c:\users\ywchen1994\desktop\winform_lrsensor\winform_lrsensor\MyForm.h(1138): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
   C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdlib.h(1266): note: 請參閱 '_sleep' 的宣告
-c:\users\ywchen1994\desktop\winform_lrsensor\winform_lrsensor\MyForm.h(1289): warning C4244: '引數': 將 'time_t' 轉換為 'double'，由於類型不同，可能導致資料遺失
-c:\users\ywchen1994\desktop\winform_lrsensor\winform_lrsensor\MyForm.h(1429): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\ywchen1994\desktop\winform_lrsensor\winform_lrsensor\MyForm.h(1155): warning C4244: '引數': 將 'time_t' 轉換為 'double'，由於類型不同，可能導致資料遺失
+c:\users\ywchen1994\desktop\winform_lrsensor\winform_lrsensor\MyForm.h(1295): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(1769): note: 請參閱 'sprintf' 的宣告
-c:\users\ywchen1994\desktop\winform_lrsensor\winform_lrsensor\MyForm.h(1476): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
+c:\users\ywchen1994\desktop\winform_lrsensor\winform_lrsensor\MyForm.h(1342): warning C4996: '_sleep': This function or variable has been superceded by newer library or operating system functionality. Consider using Sleep instead. See online help for details.
   C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdlib.h(1266): note: 請參閱 '_sleep' 的宣告
-c:\users\ywchen1994\desktop\winform_lrsensor\winform_lrsensor\MyForm.h(1620): warning C4018: '<': signed/unsigned 不相符
-c:\users\ywchen1994\desktop\winform_lrsensor\winform_lrsensor\MyForm.h(1783): warning C4244: '正在初始化': 將 'double' 轉換為 'float'，由於類型不同，可能導致資料遺失
-c:\users\ywchen1994\desktop\winform_lrsensor\winform_lrsensor\MyForm.h(1993): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\ywchen1994\desktop\winform_lrsensor\winform_lrsensor\MyForm.h(1486): warning C4018: '<': signed/unsigned 不相符
+c:\users\ywchen1994\desktop\winform_lrsensor\winform_lrsensor\MyForm.h(1649): warning C4244: '正在初始化': 將 'double' 轉換為 'float'，由於類型不同，可能導致資料遺失
+c:\users\ywchen1994\desktop\winform_lrsensor\winform_lrsensor\MyForm.h(1848): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(1769): note: 請參閱 'sprintf' 的宣告
-c:\users\ywchen1994\desktop\winform_lrsensor\winform_lrsensor\MyForm.h(2014): warning C4244: '引數': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
-c:\users\ywchen1994\desktop\winform_lrsensor\winform_lrsensor\MyForm.h(2032): warning C4018: '<': signed/unsigned 不相符
+c:\users\ywchen1994\desktop\winform_lrsensor\winform_lrsensor\MyForm.h(1869): warning C4244: '引數': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+  Pt.cpp
+c:\users\ywchen1994\desktop\winform_lrsensor\winform_lrsensor\Pt.h(46): warning C4267: '正在初始化': 將 'size_t' 轉換為 'uint'，資料可能遺失
+c:\users\ywchen1994\desktop\winform_lrsensor\winform_lrsensor\Pt.h(47): warning C4267: '正在初始化': 將 'size_t' 轉換為 'uint'，資料可能遺失
+Pt.cpp(76): warning C4267: '正在初始化': 將 'size_t' 轉換為 'uint32_t'，資料可能遺失
+Pt.cpp(142): warning C4267: '正在初始化': 將 'size_t' 轉換為 'int'，資料可能遺失
+Pt.cpp(207): warning C4018: '<': signed/unsigned 不相符
+  正在執行 C/C++ 的程式碼分析...
+  正在產生程式碼...
 c:\opencv342\build\include\opencv2\core\cvstd.hpp(575): warning C4793: 'cv::String::String': 函式會編譯成機器碼:
   	找到 Managed 程式碼中不支援的內建
 c:\opencv342\build\include\opencv2\core\cuda.inl.hpp(105): warning C4793: 'cv::cuda::GpuMat::GpuMat': 函式會編譯成機器碼:
   	找到 Managed 程式碼中不支援的內建
 c:\opencv342\build\include\opencv2\core\cuda.inl.hpp(395): warning C4793: 'cv::cuda::HostMem::HostMem': 函式會編譯成機器碼:
   	找到 Managed 程式碼中不支援的內建
-c:\users\ywchen1994\desktop\winform_lrsensor\winform_lrsensor\myform.h(1165): warning C4715: 'WinForm_LRSensor::MyForm::getRadarMode': 不是所有控制路徑都傳回值
+c:\users\ywchen1994\desktop\winform_lrsensor\winform_lrsensor\myform.h(1031): warning C4715: 'WinForm_LRSensor::MyForm::getRadarMode': 不是所有控制路徑都傳回值
 c:\opencv342\build\include\opencv2\core\mat.inl.hpp(483): warning C4793: 'cv::Mat::Mat': 函式會編譯成機器碼:
   	找到 Managed 程式碼中不支援的內建
-c:\users\ywchen1994\desktop\winform_lrsensor\winform_lrsensor\myform.h(1613): warning C4715: 'WinForm_LRSensor::MyForm::_is_InRange': 不是所有控制路徑都傳回值
+c:\users\ywchen1994\desktop\winform_lrsensor\winform_lrsensor\myform.h(1479): warning C4715: 'WinForm_LRSensor::MyForm::_is_InRange': 不是所有控制路徑都傳回值
 c:\opencv342\build\include\opencv2\core\mat.inl.hpp(807): warning C4793: 'cv::Mat::release': 函式會編譯成機器碼:
   	找到 Managed 程式碼中不支援的內建
 c:\opencv342\build\include\opencv2\core\mat.inl.hpp(2141): warning C4793: 'cv::SparseMat::addref': 函式會編譯成機器碼:
@@ -38,6 +46,51 @@ c:\opencv342\build\include\opencv2\core\ptr.inl.hpp(72): warning C4793: 'cv::det
   	找到 Managed 程式碼中不支援的內建
 c:\opencv342\build\include\opencv2\core\cvstd.hpp(657): warning C4793: 'cv::String::operator=': 函式會編譯成機器碼:
   	找到 Managed 程式碼中不支援的內建
+c:\opencv342\build\include\opencv2\core\cvstd.hpp(575): warning C4793: 'cv::String::String': 函式會編譯成機器碼:
+  	找到 Managed 程式碼中不支援的內建
+c:\opencv342\build\include\opencv2\core\mat.inl.hpp(483): warning C4793: 'cv::Mat::Mat': 函式會編譯成機器碼:
+  	找到 Managed 程式碼中不支援的內建
+c:\opencv342\build\include\opencv2\core\mat.inl.hpp(807): warning C4793: 'cv::Mat::release': 函式會編譯成機器碼:
+  	找到 Managed 程式碼中不支援的內建
+c:\opencv342\build\include\opencv2\core\mat.inl.hpp(2141): warning C4793: 'cv::SparseMat::addref': 函式會編譯成機器碼:
+  	找到 Managed 程式碼中不支援的內建
+c:\opencv342\build\include\opencv2\core\mat.inl.hpp(3741): warning C4793: 'cv::UMat::addref': 函式會編譯成機器碼:
+  	找到 Managed 程式碼中不支援的內建
+c:\opencv342\build\include\opencv2\core\ptr.inl.hpp(67): warning C4793: 'cv::detail::PtrOwner::incRef': 函式會編譯成機器碼:
+  	找到 Managed 程式碼中不支援的內建
+c:\opencv342\build\include\opencv2\core\ptr.inl.hpp(72): warning C4793: 'cv::detail::PtrOwner::decRef': 函式會編譯成機器碼:
+  	找到 Managed 程式碼中不支援的內建
+c:\opencv342\build\include\opencv2\core\mat.inl.hpp(705): warning C4793: 'cv::Mat::operator=': 函式會編譯成機器碼:
+  	找到 Managed 程式碼中不支援的內建
+  .NETFramework,Version=v4.5.2.AssemblyAttributes.cpp
   DeviceEnumerator.obj : Managed 程式碼存在時不支援 /DEBUG:FASTLINK; 正在以 /DEBUG:FULL 重新啟動連結
   WinForm_LRSensor.vcxproj -> C:\Users\ywChen1994\Desktop\WinForm_LRSensor\x64\Debug\WinForm_LRSensor.exe
   WinForm_LRSensor.vcxproj -> C:\Users\ywChen1994\Desktop\WinForm_LRSensor\x64\Debug\WinForm_LRSensor.pdb (Partial PDB)
+c:\users\ywchen1994\desktop\winform_lrsensor\deviceenum\deviceenumerator.cpp(43): warning C6387: '_Param_(1)' 可能是 '0':    這樣會違反函式 'IMoniker::BindToStorage' 的規格。
+c:\opencv342\build\include\opencv2\core\mat.inl.hpp(503): warning C6297: 算術溢位:    32 位元值進行了移位運算，又轉型為 64 位元值。結果可能不是預期的值。
+c:\opencv342\build\include\opencv2\core\mat.inl.hpp(532): warning C6297: 算術溢位:    32 位元值進行了移位運算，又轉型為 64 位元值。結果可能不是預期的值。
+c:\opencv342\build\include\opencv2\core\mat.inl.hpp(2155): warning C6297: 算術溢位:    32 位元值進行了移位運算，又轉型為 64 位元值。結果可能不是預期的值。
+c:\opencv342\build\include\opencv2\core\mat.inl.hpp(2599): warning C6011: 正在取值 NULL 指標 'm'。請見第 2596 行，找出先前發生這個情形的位置
+c:\opencv342\build\include\opencv2\core\mat.inl.hpp(2613): warning C6011: 正在取值 NULL 指標 'm'。請見第 2610 行，找出先前發生這個情形的位置
+c:\opencv342\build\include\opencv2\core\utility.hpp(517): warning C6297: 算術溢位:    32 位元值進行了移位運算，又轉型為 64 位元值。結果可能不是預期的值。
+c:\opencv342\build\include\opencv2\core\cuda.inl.hpp(301): warning C6297: 算術溢位:    32 位元值進行了移位運算，又轉型為 64 位元值。結果可能不是預期的值。
+c:\opencv342\build\include\opencv2\core\cuda.inl.hpp(482): warning C6297: 算術溢位:    32 位元值進行了移位運算，又轉型為 64 位元值。結果可能不是預期的值。
+c:\users\ywchen1994\desktop\winform_lrsensor\winform_lrsensor\myform.h(1608): warning C6262: 函式使用 '24416' 個位元組的堆疊: 超過 /analyze:stacksize '16384'。 考慮將部分資料移至堆積。
+c:\opencv342\build\include\opencv2\core\matx.hpp(1119): warning C6385: 從 'this->val' 讀取無效的資料:    可讀取的大小只有 '12' 個位元組，但可能會讀取多達 'i' 個位元組。
+c:\opencv342\build\include\opencv2\core\mat.inl.hpp(1858): warning C6011: 正在取值 NULL 指標 'this->data+this->step.p[0]*i0'。
+c:\opencv342\build\include\opencv2\core\matx.hpp(562): warning C6294: for 迴圈定義錯誤:    初始條件未滿足測試。未執行迴圈主體。
+c:\opencv342\build\include\opencv2\core\matx.hpp(562): warning C6201: 索引 '3' 超出有效的索引範圍: '0' 到 '2' (此索引範圍屬於可能為堆疊配置的緩衝區 'this->val')。
+c:\opencv342\build\include\opencv2\core\mat.inl.hpp(1101): warning C6011: 正在取值 NULL 指標 'data+step.p[0]*i0'。
+c:\opencv342\build\include\opencv2\core\matx.hpp(554): warning C6294: for 迴圈定義錯誤:    初始條件未滿足測試。未執行迴圈主體。
+c:\opencv342\build\include\opencv2\core\matx.hpp(554): warning C6201: 索引 '2' 超出有效的索引範圍: '0' 到 '1' (此索引範圍屬於可能為堆疊配置的緩衝區 'this->val')。
+c:\opencv342\build\include\opencv2\core\matx.hpp(570): warning C6294: for 迴圈定義錯誤:    初始條件未滿足測試。未執行迴圈主體。
+c:\opencv342\build\include\opencv2\core\matx.hpp(570): warning C6201: 索引 '4' 超出有效的索引範圍: '0' 到 '3' (此索引範圍屬於可能為堆疊配置的緩衝區 'this->val')。
+  正在執行程式碼分析...
+MSBUILD : warning CA1016: Microsoft.Design : 將 AssemblyVersion 屬性加入至 'WinForm_LRSensor.exe'。
+c:\users\ywchen1994\desktop\winform_lrsensor\winform_lrsensor\myform.h(1306): warning CA2122: Microsoft.Security : 'MyForm::ShowImage(PictureBox^, Mat*)' 會呼叫具有 LinkDemand 的 'Bitmap::LockBits(Rectangle, ImageLockMode, PixelFormat)' 程式碼內部。藉由進行這個呼叫，'Bitmap::LockBits(Rectangle, ImageLockMode, PixelFormat)' 會間接對使用者程式碼公開。請檢查下列呼叫堆疊是否會公開規避安全性保護的方式: 
+c:\users\ywchen1994\desktop\winform_lrsensor\winform_lrsensor\myform.h(1306): warning CA2122:    ->'MyForm::ShowImage(PictureBox^, Mat*)'
+c:\users\ywchen1994\desktop\winform_lrsensor\winform_lrsensor\myform.h(1306): warning CA2122:    ->'MyForm::ShowImage(PictureBox^, Mat*)'
+c:\users\ywchen1994\desktop\winform_lrsensor\winform_lrsensor\myform.h(1306): warning CA2122: Microsoft.Security : 'MyForm::ShowImage(PictureBox^, Mat*)' 會呼叫具有 LinkDemand 的 'Bitmap::UnlockBits(BitmapData^)' 程式碼內部。藉由進行這個呼叫，'Bitmap::UnlockBits(BitmapData^)' 會間接對使用者程式碼公開。請檢查下列呼叫堆疊是否會公開規避安全性保護的方式: 
+c:\users\ywchen1994\desktop\winform_lrsensor\winform_lrsensor\myform.h(1306): warning CA2122:    ->'MyForm::ShowImage(PictureBox^, Mat*)'
+c:\users\ywchen1994\desktop\winform_lrsensor\winform_lrsensor\myform.h(1306): warning CA2122:    ->'MyForm::ShowImage(PictureBox^, Mat*)'
+  程式碼分析完成 -- 0 個錯誤，3 個警告

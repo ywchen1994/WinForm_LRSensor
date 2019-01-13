@@ -86,7 +86,6 @@ int DBSCAN(std::vector<Pt>& _vec, double Eps, int MinPts)
 			{
 				if (get_Distance(_vec[i], _vec[j]) <= Eps)
 					_vec[i].ArrivalPoints.push_back(j);
-
 			}
 			else
 			{
@@ -136,7 +135,7 @@ bool predicate(Pt P1, Pt P2, double eps)
 }
 bool predicate(Pt P1, Pt P2)
 {
-	return   (abs(P1.y - P2.y)<200) && (abs(P1.x - P2.x) < 100) && (abs(P1.theta - P2.theta) < 2);
+	return   (abs(P1.y - P2.y)<200) && (abs(P1.x - P2.x) < 100) && (abs(P1.theta - P2.theta) < 3);
 }
 int EuclidCluster(vector<Pt>& _vec, double eps)
 {
@@ -271,7 +270,7 @@ void FindRectangle(vector<Pt> clusterPt,double &W,double &H,double &angle,Pt &re
 Pt CoordinateRotation(double degree, Pt P)
 {
 	Pt Ans;
-	Ans.x = cos(degree*M_PI / 180)*P.x + sin(degree*M_PI / 180)*P.y;
-	Ans.y = -sin(degree*M_PI / 180)*P.x + cos(degree*M_PI / 180)*P.y;
+	Ans.x = cos(degree*M_PI / 180)*P.x -sin(degree*M_PI / 180)*P.y;
+	Ans.y = sin(degree*M_PI / 180)*P.x + cos(degree*M_PI / 180)*P.y;
 	return Ans;
 }

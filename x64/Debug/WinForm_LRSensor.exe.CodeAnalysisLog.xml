@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 14.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="14.0">
+ <Targets>
+  <Target Name="C:\Users\ywChen1994\Desktop\WinForm_LRSensor\x64\Debug\WinForm_LRSensor.exe">
+   <Modules>
+    <Module Name="winform_lrsensor.exe">
+     <Messages>
+      <Message TypeName="MarkAssembliesWithAssemblyVersion" Category="Microsoft.Design" CheckId="CA1016" Status="Active" Created="2018-12-24 03:06:38Z" FixCategory="NonBreaking">
+       <Issue Certainty="95" Level="Error">將 AssemblyVersion 屬性加入至 'WinForm_LRSensor.exe'。</Issue>
+      </Message>
+     </Messages>
+     <Namespaces>
+      <Namespace Name="WinForm_LRSensor">
+       <Types>
+        <Type Name="MyForm" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ShowImage(System.Windows.Forms.PictureBox,{modreq(System.Runtime.CompilerServices.IsCopyConstructed)}cv.Mat*)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotIndirectlyExposeMethodsWithLinkDemands" Category="Microsoft.Security" CheckId="CA2122" Status="Active" Created="2018-12-24 03:06:38Z" FixCategory="NonBreaking">
+             <Issue Certainty="33" Level="CriticalError" Path="c:\users\ywchen1994\desktop\winform_lrsensor\winform_lrsensor" File="myform.h" Line="1306">'MyForm::ShowImage(PictureBox^, Mat*)' 會呼叫具有 LinkDemand 的 'Bitmap::LockBits(Rectangle, ImageLockMode, PixelFormat)' 程式碼內部。藉由進行這個呼叫，'Bitmap::LockBits(Rectangle, ImageLockMode, PixelFormat)' 會間接對使用者程式碼公開。請檢查下列呼叫堆疊是否會公開規避安全性保護的方式: &#xD;&#xA;   -&gt;'MyForm::ShowImage(PictureBox^, Mat*)'&#xD;&#xA;   -&gt;'MyForm::ShowImage(PictureBox^, Mat*)'</Issue>
+             <Issue Certainty="33" Level="CriticalError" Path="c:\users\ywchen1994\desktop\winform_lrsensor\winform_lrsensor" File="myform.h" Line="1306">'MyForm::ShowImage(PictureBox^, Mat*)' 會呼叫具有 LinkDemand 的 'Bitmap::UnlockBits(BitmapData^)' 程式碼內部。藉由進行這個呼叫，'Bitmap::UnlockBits(BitmapData^)' 會間接對使用者程式碼公開。請檢查下列呼叫堆疊是否會公開規避安全性保護的方式: &#xD;&#xA;   -&gt;'MyForm::ShowImage(PictureBox^, Mat*)'&#xD;&#xA;   -&gt;'MyForm::ShowImage(PictureBox^, Mat*)'</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="DoNotIndirectlyExposeMethodsWithLinkDemands" Category="Microsoft.Security" CheckId="CA2122">
+   <Name>不要間接公開具有連結要求的方法</Name>
+   <Description>不要用未執行安全性檢查的方法包裝由 LinkDemand 保護的方法。LinkDemand 會檢查立即呼叫者的使用權限，而不會檢查呼叫堆疊中所有呼叫端的使用權限。在這種情況下，所檢查的將是包裝函式方法的使用權限。如果包裝函式方法本身不會檢查呼叫堆疊中較高呼叫端的使用權限，惡意程式碼就有可能在不具備使用權限的情況下，就能執行這個包裝的函式。</Description>
+   <Resolution Name="Default">{0} 會呼叫具有 LinkDemand 的 {1} 程式碼內部。藉由進行這個呼叫，{1} 會間接對使用者程式碼公開。請檢查下列呼叫堆疊是否會公開規避安全性保護的方式: {2}</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182303.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="33">CriticalError</MessageLevel>
+   <File Name="securityrules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkAssembliesWithAssemblyVersion" Category="Microsoft.Design" CheckId="CA1016">
+   <Name>組件必須標記 AssemblyVersionAttribute</Name>
+   <Description>組件應該使用版本號碼。版本號碼視為組件識別的一部分。版本控制會藉由 AssemblyVersion 屬性套用。</Description>
+   <Resolution Name="Default">將 AssemblyVersion 屬性加入至 {0}。</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182155.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="14.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">分類</String>
+  <String Key="Certainty">確實性</String>
+  <String Key="CollapseAll">全部摺疊</String>
+  <String Key="CheckId">檢查 ID</String>
+  <String Key="Error">錯誤</String>
+  <String Key="Errors">錯誤</String>
+  <String Key="ExpandAll">全部展開</String>
+  <String Key="Help">說明</String>
+  <String Key="Line">行</String>
+  <String Key="Messages">訊息</String>
+  <String Key="LocationNotStoredInPdb">[位置未儲存在 PDB]</String>
+  <String Key="Project">專案</String>
+  <String Key="Resolution">解析度</String>
+  <String Key="Rule">規則</String>
+  <String Key="RuleFile">規則檔</String>
+  <String Key="RuleDescription">規則描述</String>
+  <String Key="Source">來源</String>
+  <String Key="Status">狀態</String>
+  <String Key="Target">目標</String>
+  <String Key="Warning">警告</String>
+  <String Key="Warnings">警告</String>
+  <String Key="ReportTitle">程式碼分析報告</String>
+ </Localized>
+</FxCopReport>
